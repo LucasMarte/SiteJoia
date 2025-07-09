@@ -1,0 +1,14 @@
+/*
+Custom Css
+*/
+
+/* index Top Nav -- start */
+#templatemo_nav_top {
+  background-color: #000000 !important;
+}
+
+#templatemo_nav_top a,
+#templatemo_nav_top i {
+  color: #ffffff !important;
+}
+/* index Top Nav -- close */
