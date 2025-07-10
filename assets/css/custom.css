@@ -24,3 +24,15 @@ Custom Css
   border-color: #e8b03c !important;
 }
 /* index header -- close */
+
+
+/* Carousel Banner -- start */
+#template-mo-zay-hero-carousel .carousel-indicators li {
+  margin-top: -50px;
+  color: #e8b03c !important;
+}
+#template-mo-zay-hero-carousel .carousel-control-next i,
+#template-mo-zay-hero-carousel .carousel-control-prev i {
+  color: #e8b03c !important;
+  font-size: 2.8em !important;
+}
