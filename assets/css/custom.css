@@ -18,4 +18,9 @@ Custom Css
 #templatemo_main_nav a:hover {
   color: #e8b03c !important;
 }
+
+.modal-content button {
+  background-color: #e8b03c !important;
+  border-color: #e8b03c !important;
+}
 /* index header -- close */
