@@ -32,6 +32,14 @@ Custom Css
   margin-top: -50px;
   color: #e8b03c !important;
 }
+.carousel-indicators li {
+    background-color: #e8b03c;  /* cor dourada */
+}
+
+.carousel-indicators .active {
+    background-color: #ffb829; /* um dourado um pouco mais forte para o ativo (opcional) */
+}
+
 #template-mo-zay-hero-carousel .carousel-control-next i,
 #template-mo-zay-hero-carousel .carousel-control-prev i {
   color: #e8b03c !important;
