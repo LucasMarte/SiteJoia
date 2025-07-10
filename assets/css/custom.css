@@ -12,3 +12,10 @@ Custom Css
   color: #ffffff !important;
 }
 /* index Top Nav -- close */
+
+
+/* index header -- start */
+#templatemo_main_nav a:hover {
+  color: #e8b03c !important;
+}
+/* index header -- close */
