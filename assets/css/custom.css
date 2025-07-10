@@ -26,6 +26,7 @@ Custom Css
 /* index header -- close */
 
 
+
 /* Carousel Banner -- start */
 #template-mo-zay-hero-carousel .carousel-indicators li {
   margin-top: -50px;
@@ -37,3 +38,13 @@ Custom Css
   font-size: 2.8em !important;
 }
 .text-success { color: #f4bc4c !important;}
+/* Carousel Banner -- close */
+
+
+
+/* featured -- start */
+.btn-success {
+  background-color: #e8b03c;
+  border-color: #e8b03c;
+}
+/* featured -- close */
