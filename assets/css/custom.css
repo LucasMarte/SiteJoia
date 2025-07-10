@@ -48,3 +48,29 @@ Custom Css
   border-color: #e8b03c;
 }
 /* featured -- close */
+
+
+
+
+/* Destaques -- start */
+.card img {
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+.card-body h3 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+}
+
+.bg-light {
+  background-color: #f3f1e7 !important; /* tom claro elegante, suave */
+}
+/* Destaques -- close */
