@@ -155,4 +155,9 @@ section.bg-white {
   color: #666;
 }
 
+.product-thumbnail-carousel img {
+    max-height: 100px;
+    object-fit: cover;
+    padding: 4px;
+}
 /* Shop-single Content -- close */
