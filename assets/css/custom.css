@@ -82,3 +82,24 @@ Custom Css
   background-color: #f3f1e7 !important; /* tom claro elegante, suave */
 }
 /* Destaques -- close */
+
+
+
+
+
+/* Shop-single Content -- start */
+section.bg-white {
+    background-color: #fff !important;
+}
+
+#multi-item-example .img-fluid {
+    border: 1px solid #eeeeeebc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+#multi-item-example .img-fluid:hover {
+    transform: scale(1.05);
+}
+/* Shop-single Content -- close */
