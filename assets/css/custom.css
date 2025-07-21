@@ -171,4 +171,28 @@ section.bg-white {
   border-top-right-radius: 0.75rem;
 }
 
+
+
+
+.custom-arrow-left,
+.custom-arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    color: #C5A46D; /* dourado */
+    cursor: pointer;
+}
+
+.custom-arrow-left {
+    left: -30px;
+}
+
+.custom-arrow-right {
+    right: -30px;
+}
+
 /* Shop-single Content -- close */
