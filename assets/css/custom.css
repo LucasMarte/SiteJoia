@@ -201,6 +201,10 @@ section.bg-white {
   min-height: 350px;
 }
 
+#carousel-related-product > div {
+  padding: 0 12px;
+}
+
 
 
 /* Shop-single Content -- close */

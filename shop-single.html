@@ -324,9 +324,6 @@
     <!-- Close Content -->
 
 
-
-
-
     <!-- Start Article -->
     <section class="py-5">
         <div class="container">
@@ -338,12 +335,12 @@
             <div class="carousel-wrapper position-relative">
 
                 <!-- Botões do carrossel -->
-                <button class="slick-prev custom-arrow-left" aria-label="Anterior">
+                <!-- <button class="slick-prev custom-arrow-left" aria-label="Anterior">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <button class="slick-next custom-arrow-right" aria-label="Próximo">
                     <i class="fas fa-chevron-right"></i>
-                </button>
+                </button> -->
 
 
                 <!--Start Carousel Wrapper-->
@@ -573,8 +570,8 @@
         $('#carousel-related-product').slick({
             infinite: true,
             arrows: true,
-            prevArrow: $('.custom-arrow-left'),
-            nextArrow: $('.custom-arrow-right'),
+            prevArrow: `<button type="button" class="slick-prev custom-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#c19a6b" viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>`,
+            nextArrow: `<button type="button" class="slick-next custom-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#c19a6b" viewBox="0 0 24 24"><path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></button>`,
             slidesToShow: 4,
             slidesToScroll: 3,
             dots: true,
