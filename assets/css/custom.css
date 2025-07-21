@@ -193,9 +193,14 @@ section.bg-white {
     right: -30px;
 }
 
-#carousel-related-product > div {
-    padding: 0 12px; /* margem lateral entre os produtos */
+
+/* Forçar altura mínima para o wrapper do carrossel */
+.carousel-wrapper {
+  position: relative;
+  padding: 0 30px;
+  min-height: 350px;
 }
+
 
 
 /* Shop-single Content -- close */
