@@ -169,6 +169,8 @@ section.bg-white {
   object-fit: cover;
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
+  border-radius: 0 !important;
+
 }
 
 
@@ -194,5 +196,10 @@ section.bg-white {
 .custom-arrow-right {
     right: -30px;
 }
+
+#carousel-related-product > div {
+    padding: 0 12px; /* margem lateral entre os produtos */
+}
+
 
 /* Shop-single Content -- close */
