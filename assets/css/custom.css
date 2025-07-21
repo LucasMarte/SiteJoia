@@ -160,4 +160,15 @@ section.bg-white {
     object-fit: cover;
     padding: 4px;
 }
+
+
+
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
 /* Shop-single Content -- close */
