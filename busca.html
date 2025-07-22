@@ -137,7 +137,7 @@
 
 
 
-    <!-- Start Content -->
+
     <div class="container py-5">
         <div class="row">
 
@@ -229,28 +229,29 @@
             </div>
             <!-- Close Barra lateral -->
 
+            <!-- Start Content -->
             <div class="col-lg-9">
                 <div class="row">
                     <div class="col-md-6">
-                        <ul class="list-inline shop-top-menu pb-3 pt-1">
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">All</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Men's</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none" href="#">Women's</a>
-                            </li>
-                        </ul>
                     </div>
                     <div class="col-md-6 pb-4">
-                        <div class="d-flex">
-                            <select class="form-control">
-                                <option>Featured</option>
-                                <option>A to Z</option>
-                                <option>Item</option>
-                            </select>
+                        <div class="d-flex justify-content-md-end">
+                            <div class="facet-filters__field">
+                                <p class="facet-filters__label mb-1">
+                                    <label for="SortBy">Ordenar por:</label>
+                                </p>
+                                <div class="facet-filters__selector-wrapper position-relative">
+                                    <select name="sort_by" class="custom-minimal-select pe-5" id="SortBy"
+                                        aria-describedby="sortHelp">
+                                        <option value="newest" selected>Novedades</option>
+                                        <option value="best-selling">Mais vendidos</option>
+                                        <option value="price-desc">Preço: maior para menor</option>
+                                        <option value="price-asc">Preço: menor para maior</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down position-absolute"
+                                        style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none; color: #999;"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

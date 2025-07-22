@@ -229,4 +229,41 @@ section.bg-white {
   text-decoration: none;
 }
 /* Filtros minimalistas estilo dropdown -- close*/
+
+/* Estilo minimalista para o select de ordenação */
+.facet-filters__selector-wrapper select.custom-minimal-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  padding-right: 2rem;
+  padding-left: 0;
+  font-size: 1rem;
+  color: #444;
+  width: 100%;
+}
+
+.facet-filters__selector-wrapper select.custom-minimal-select:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #000;
+}
+
+.facet-filters__label {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 400;
+}
+
+.facet-filters__selector-wrapper {
+  position: relative;
+}
+
+.facet-filters__selector-wrapper i.fas {
+  font-size: 0.8rem;
+}
+
+
 /* busca.html -- close */
