@@ -194,3 +194,39 @@ section.bg-white {
 
 
 /* Shop-single Content -- close */
+
+
+
+/* busca.html -- start */
+
+/* Filtros minimalistas estilo dropdown -- Start */
+.custom-minimal-select {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: 1rem;
+  color: #444;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+}
+
+.custom-minimal-select:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #000;
+}
+
+.custom-clear-filters {
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.custom-clear-filters:hover {
+  color: #000;
+  text-decoration: none;
+}
+/* Filtros minimalistas estilo dropdown -- close*/
+/* busca.html -- close */
