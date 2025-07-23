@@ -266,4 +266,9 @@ section.bg-white {
 }
 
 
+.pagination .page-link:hover {color: #000;}
+.pagination .page-link:hover, .pagination .page-link.active {
+  background-color: #e1b865d1;
+  color: #fff;
+}
 /* busca.html -- close */
