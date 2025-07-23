@@ -367,19 +367,8 @@
                         </a>
                     </div>
                     <div div="row">
-                        <ul class="pagination pagination-lg justify-content-end">
-                            <li class="page-item disabled">
-                                <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#"
-                                    tabindex="-1">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark"
-                                    href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark"
-                                    href="#">3</a>
-                            </li>
+                        <ul class="pagination pagination-lg justify-content-end" id="paginacao-dinamica">
+                            <!-- Os botões serão criados via JavaScript -->
                         </ul>
                     </div>
                 </div>
@@ -467,29 +456,52 @@
     <!-- End Script -->
 
     <script>
-        let paginaAtual = 1; // valor inicial
+        const totalPaginas = 10;
+        let paginaAtual = 1;
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const botoes = document.querySelectorAll('.pagination .page-link');
+        function renderizarPaginacao() {
+            const container = document.getElementById('paginacao-dinamica');
+            container.innerHTML = ''; // limpa os botões
 
-            botoes.forEach(botao => {
-                botao.addEventListener('click', function (e) {
+            let inicio = Math.max(1, paginaAtual - 1);
+            let fim = Math.min(totalPaginas, inicio + 2);
+
+            // Corrige se estiver no final
+            if (fim - inicio < 2) {
+                inicio = Math.max(1, fim - 2);
+            }
+
+            for (let i = inicio; i <= fim; i++) {
+                const li = document.createElement('li');
+                li.classList.add('page-item');
+                if (i === paginaAtual) li.classList.add('active');
+
+                const a = document.createElement('a');
+                a.href = '#';
+                a.className = 'page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark';
+                if (i === paginaAtual) a.classList.add('active');
+                a.textContent = i;
+
+                a.addEventListener('click', function (e) {
                     e.preventDefault();
-
-                    // Pega o número clicado
-                    const numero = parseInt(this.textContent);
-                    if (!isNaN(numero)) {
-                        paginaAtual = numero;
-                        console.log("Página atual:", paginaAtual);
-                    }
-
-                    // Remove 'active' de todos
-                    botoes.forEach(btn => btn.classList.remove('active'));
-                    // Adiciona 'active' ao botão clicado
-                    this.classList.add('active');
+                    paginaAtual = i;
+                    console.log('Página atual:', paginaAtual);
+                    renderizarPaginacao();
+                    atualizarProdutos(paginaAtual); // depois você pode usar para AJAX
                 });
-            });
-        });
+
+                li.appendChild(a);
+                container.appendChild(li);
+            }
+        }
+
+        function atualizarProdutos(pagina) {
+            // Simulação do carregamento da página
+            console.log("Carregando produtos da página " + pagina);
+            // Aqui entraria a lógica de AJAX no futuro.
+        }
+
+        document.addEventListener('DOMContentLoaded', renderizarPaginacao);
     </script>
 
 </body>
