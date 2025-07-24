@@ -147,12 +147,13 @@
 
                 <form>
                     <div class="form-group mb-4">
-                        <select class="form-control custom-minimal-select">
+                        <select name="categoria" class="form-control custom-minimal-select">
                             <option selected disabled>Categoria da Jóia</option>
-                            <option>Anel</option>
                             <option>Colar</option>
-                            <option>Pulseira</option>
                             <option>Brinco</option>
+                            <option>Pulseira</option>
+                            <option>Anel</option>
+                            <option>Outros</option>
                         </select>
                     </div>
 
@@ -503,6 +504,27 @@
 
         document.addEventListener('DOMContentLoaded', renderizarPaginacao);
     </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const categoria = params.get('categoria');
+
+            if (categoria) {
+                const select = document.querySelector('select[name="categoria"]');
+                if (select) {
+                    for (let opt of select.options) {
+                        if (opt.textContent.trim().toLowerCase() === categoria.toLowerCase()) {
+                            opt.selected = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
 
 </body>
 
