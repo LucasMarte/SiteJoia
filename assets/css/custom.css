@@ -11,6 +11,7 @@ Custom Css
 #templatemo_nav_top i {
   color: #ffffff !important;
 }
+
 /* index Top Nav -- close */
 
 
@@ -24,31 +25,38 @@ Custom Css
   border-color: #e8b03c !important;
 }
 
-/* Dropdown joia no menu principal */
-.nav-item.dropdown:hover .custom-dropdown {
-  display: block;
+.nav-link.dropdown-toggle::after {
+  display: none !important;
 }
 
+/* Dropdown joia no menu principal */
+.nav-item.dropdown:hover .custom-dropdown {
+  display: flex;
+}
 .custom-dropdown {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   background-color: white;
-  min-width: 160px;
   z-index: 1000;
   border: 1px solid #ddd;
+  padding: 10px 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: row;
+  gap: 20px;
+ 
 }
-
 .custom-dropdown .dropdown-item {
-  padding: 10px 20px;
+  white-space: nowrap;
+  padding: 5px 10px;
   font-size: 0.95rem;
   color: #333;
-  transition: background-color 0.2s;
+  transition: color 0.2s;
+  border-bottom: 2px solid transparent;
 }
-
 .custom-dropdown .dropdown-item:hover {
-  background-color: #f8f8f8;
+  border-bottom: 2px solid #e8b03c;
   color: #e8b03c;
 }
 
@@ -61,12 +69,15 @@ Custom Css
   margin-top: -50px;
   color: #e8b03c !important;
 }
+
 .carousel-indicators li {
-    background-color: #e8b03c;  /* cor dourada */
+  background-color: #e8b03c;
+  /* cor dourada */
 }
 
 .carousel-indicators .active {
-    background-color: #ffb829; /* um dourado um pouco mais forte para o ativo (opcional) */
+  background-color: #ffb829;
+  /* um dourado um pouco mais forte para o ativo (opcional) */
 }
 
 #template-mo-zay-hero-carousel .carousel-control-next i,
@@ -74,7 +85,11 @@ Custom Css
   color: #e8b03c !important;
   font-size: 2.8em !important;
 }
-.text-success { color: #f4bc4c !important;}
+
+.text-success {
+  color: #f4bc4c !important;
+}
+
 /* Carousel Banner -- close */
 
 
@@ -84,6 +99,7 @@ Custom Css
   background-color: #e8b03c;
   border-color: #e8b03c;
 }
+
 /* featured -- close */
 
 
@@ -108,8 +124,10 @@ Custom Css
 }
 
 .bg-light {
-  background-color: #f3f1e7 !important; /* tom claro elegante, suave */
+  background-color: #f3f1e7 !important;
+  /* tom claro elegante, suave */
 }
+
 /* Destaques -- close */
 
 
@@ -118,18 +136,18 @@ Custom Css
 
 /* Shop-single Content -- start */
 section.bg-white {
-    background-color: #fff !important;
+  background-color: #fff !important;
 }
 
 #multi-item-example .img-fluid {
-    border: 1px solid #eeeeeebc;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+  border: 1px solid #eeeeeebc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
 #multi-item-example .img-fluid:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .product-title {
@@ -185,9 +203,9 @@ section.bg-white {
 }
 
 .product-thumbnail-carousel img {
-    max-height: 100px;
-    object-fit: cover;
-    padding: 4px;
+  max-height: 100px;
+  object-fit: cover;
+  padding: 4px;
 }
 
 
@@ -201,11 +219,12 @@ section.bg-white {
 
 
 
-.slick-slide{
-  margin:10px;
+.slick-slide {
+  margin: 10px;
 }
-.slick-slide img{
-  width:100%;
+
+.slick-slide img {
+  width: 100%;
 }
 
 
@@ -216,7 +235,7 @@ section.bg-white {
   min-height: 350px;
 }
 
-#carousel-related-product > div {
+#carousel-related-product>div {
   padding: 0 12px;
 }
 
@@ -257,6 +276,7 @@ section.bg-white {
   color: #000;
   text-decoration: none;
 }
+
 /* Filtros minimalistas estilo dropdown -- close*/
 
 /* Estilo minimalista para o select de ordenação */
@@ -295,10 +315,15 @@ section.bg-white {
 }
 
 
-.pagination .page-link:hover {color: #000;}
-.pagination .page-link:hover, .pagination .page-link.active {
+.pagination .page-link:hover {
+  color: #000;
+}
+
+.pagination .page-link:hover,
+.pagination .page-link.active {
   background-color: #e1b865d1;
   color: #fff;
   border-color: transparent !important;
 }
+
 /* busca.html -- close */
