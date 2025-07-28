@@ -341,3 +341,33 @@ section.bg-white {
 }
 
 /* busca.html -- close */
+
+
+/* buscaGemas.html -- start */
+
+.tipo-gema-group {
+    max-width: 100%;
+    gap: 0.5rem;
+}
+.tipo-gema-group .tipo-gema-btn {
+    flex: 1 1 calc(33.33% - 0.5rem);
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 50px !important;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+    min-width: 90px;
+}
+.tipo-gema-group .tipo-gema-btn i {
+    font-size: 0.8rem;
+    vertical-align: middle;
+}
+.btn-check:checked + .tipo-gema-btn,
+.tipo-gema-btn:hover {
+    background-color: #e8b03c !important;
+    color: #fff !important;
+    border-color: #e8b03c !important;
+}
+
+/* buscaGemas.html -- close */

@@ -155,50 +155,57 @@
                 <h1 class="h2 pb-4">Filtrar:</h1>
 
                 <form>
+                    <!-- Tipo da Gema: Preciosa, Semipreciosa, Laboratório -->
                     <div class="form-group mb-4">
-                        <select name="categoria" class="form-control custom-minimal-select">
-                            <option selected disabled>Categoria da Jóia</option>
-                            <option>Colar</option>
-                            <option>Brinco</option>
-                            <option>Pulseira</option>
-                            <option>Anel</option>
-                            <option>Outros</option>
-                        </select>
+                        <label class="mb-2 fw-bold d-block">Tipo de Gema</label>
+                        <div class="d-flex flex-wrap tipo-gema-group w-100" role="group" aria-label="Tipo de Gema">
+                            <input type="radio" class="btn-check" name="tipoGema" id="preciosas" autocomplete="off">
+                            <label class="btn btn-outline-dark tipo-gema-btn" for="preciosas">
+                                <i class="fas fa-gem me-1"></i> Preciosa
+                            </label>
+
+                            <input type="radio" class="btn-check" name="tipoGema" id="semipreciosas" autocomplete="off">
+                            <label class="btn btn-outline-dark tipo-gema-btn" for="semipreciosas">
+                                <i class="fas fa-star me-1"></i> Semipreciosa
+                            </label>
+
+                            <input type="radio" class="btn-check" name="tipoGema" id="laboratorio" autocomplete="off">
+                            <label class="btn btn-outline-dark tipo-gema-btn" for="laboratorio">
+                                <i class="fas fa-flask me-1"></i> Laboratório
+                            </label>
+                        </div>
                     </div>
 
+                    <!-- Pedra -->
                     <div class="form-group mb-4">
-                        <select class="form-control custom-minimal-select">
+                        <select class="form-control custom-minimal-select" name="pedra">
                             <option selected disabled>Pedra</option>
                             <option>Diamante</option>
-                            <option>Safira</option>
                             <option>Esmeralda</option>
+                            <option>Safira</option>
                             <option>Rubelita</option>
+                            <option>Ametista</option>
+                            <option>Topázio</option>
                         </select>
                     </div>
 
+                    <!-- Lapidação / Shape -->
                     <div class="form-group mb-4">
-                        <select class="form-control custom-minimal-select">
-                            <option selected disabled>Cor da Pedra</option>
-                            <option>Branco</option>
-                            <option>Azul</option>
-                            <option>Verde</option>
-                            <option>Rosa</option>
+                        <select class="form-control custom-minimal-select" name="lapidacao">
+                            <option selected disabled>Lapidação</option>
+                            <option>Brilhante</option>
+                            <option>Oval</option>
+                            <option>Pera</option>
+                            <option>Esmeralda</option>
+                            <option>Coração</option>
+                            <option>Cushion</option>
                         </select>
                     </div>
 
+                    <!-- Preço -->
                     <div class="form-group mb-4">
-                        <select class="form-control custom-minimal-select">
-                            <option selected disabled>Metal</option>
-                            <option>Ouro Amarelo</option>
-                            <option>Ouro Branco</option>
-                            <option>Ouro Rosé</option>
-                            <option>Prata</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group mb-4">
-                        <select class="form-control custom-minimal-select">
-                            <option selected disabled>Range de Preços</option>
+                        <select class="form-control custom-minimal-select" name="preco">
+                            <option selected disabled>Faixa de Preço</option>
                             <option>Até R$ 1.000</option>
                             <option>R$ 1.000 - R$ 5.000</option>
                             <option>R$ 5.000 - R$ 10.000</option>
@@ -206,8 +213,9 @@
                         </select>
                     </div>
 
+                    <!-- Quilate -->
                     <div class="form-group mb-4">
-                        <select class="form-control custom-minimal-select">
+                        <select class="form-control custom-minimal-select" name="quilate">
                             <option selected disabled>Quilates</option>
                             <option>0.25 ct</option>
                             <option>0.5 ct</option>
@@ -216,25 +224,13 @@
                         </select>
                     </div>
 
-                    <div class="form-group mb-4">
-                        <select class="form-control custom-minimal-select">
-                            <option selected disabled>Aro do Anel</option>
-                            <option>10</option>
-                            <option>12</option>
-                            <option>14</option>
-                            <option>16</option>
-                            <option>18</option>
-                            <option>20</option>
-                            <option>22</option>
-                        </select>
-                    </div>
+                    <!-- Botão de limpar -->
                     <div class="text-end mt-3">
                         <button type="reset"
                             class="btn btn-link p-0 text-decoration-underline text-muted custom-clear-filters">
                             <i class="fas fa-times-circle me-1"></i> Limpar filtros
                         </button>
                     </div>
-
                 </form>
             </div>
             <!-- Close Barra lateral -->
