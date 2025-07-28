@@ -178,14 +178,9 @@
 
                     <!-- Pedra -->
                     <div class="form-group mb-4">
-                        <select class="form-control custom-minimal-select" name="pedra">
+                        <label for="select-pedra" class="fw-bold">Pedra</label>
+                        <select id="select-pedra" class="form-control custom-minimal-select">
                             <option selected disabled>Pedra</option>
-                            <option>Diamante</option>
-                            <option>Esmeralda</option>
-                            <option>Safira</option>
-                            <option>Rubelita</option>
-                            <option>Ametista</option>
-                            <option>Topázio</option>
                         </select>
                     </div>
 
@@ -511,6 +506,7 @@
     </script>
 
 
+    <!-- script que atualiza "tipo de gema" e "pedra" conforme href -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const params = new URLSearchParams(window.location.search);
@@ -529,6 +525,40 @@
             }
         });
     </script>
+
+    <!-- Atualiza "pedras" conforme tipo de gema selecionado -->
+    <script>
+        const pedras = {
+            preciosa: ["Diamante", "Esmeralda", "Safira"],
+            semipreciosa: ["Ametista", "Topázio", "Granada"],
+            laboratorio: ["Zircônia", "Moissanita", "Cristal sintético"]
+        };
+
+        function atualizarOpcoesPedra(tipoSelecionado) {
+            const selectPedra = document.getElementById("select-pedra");
+            selectPedra.innerHTML = '<option selected disabled>Selecione uma pedra</option>';
+
+            if (pedras[tipoSelecionado]) {
+                pedras[tipoSelecionado].forEach(pedra => {
+                    const opt = document.createElement("option");
+                    opt.value = pedra.toLowerCase();
+                    opt.textContent = pedra;
+                    selectPedra.appendChild(opt);
+                });
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const botoes = document.querySelectorAll('input[name="tipoGema"]');
+
+            botoes.forEach(botao => {
+                botao.addEventListener("change", function () {
+                    atualizarOpcoesPedra(this.id);
+                });
+            });
+        });
+    </script>
+
 
 
 </body>
