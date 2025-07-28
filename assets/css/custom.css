@@ -63,6 +63,16 @@ Custom Css
   /* border-bottom: 2px solid #e8b03c; */
   color: #e8b03c;
 }
+.dropdown-item:active,
+.dropdown-item:focus,
+.dropdown-item:focus-visible {
+  background-color: transparent !important;
+  color: inherit !important;
+  outline: none;
+}
+.dropdown-item {
+  -webkit-tap-highlight-color: transparent;
+}
 
 /* index header -- close */
 
