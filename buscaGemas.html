@@ -160,12 +160,12 @@
                         <label class="mb-2 fw-bold d-block">Tipo de Gema</label>
                         <div class="d-flex flex-wrap tipo-gema-group w-100" role="group" aria-label="Tipo de Gema">
                             <input type="radio" class="btn-check" name="tipoGema" id="preciosa" autocomplete="off">
-                            <label class="btn btn-outline-dark tipo-gema-btn" for="preciosas">
+                            <label class="btn btn-outline-dark tipo-gema-btn" for="preciosa">
                                 <i class="fas fa-gem me-1"></i> Preciosa
                             </label>
 
                             <input type="radio" class="btn-check" name="tipoGema" id="semipreciosa" autocomplete="off">
-                            <label class="btn btn-outline-dark tipo-gema-btn" for="semipreciosas">
+                            <label class="btn btn-outline-dark tipo-gema-btn" for="semipreciosa">
                                 <i class="fas fa-star me-1"></i> Semipreciosa
                             </label>
 
@@ -459,6 +459,8 @@
     <script src="assets/js/custom.js"></script>
     <!-- End Script -->
 
+
+    <!-- Script para os três botões do fundo direito -->
     <script>
         const totalPaginas = 10;
         let paginaAtual = 1;
@@ -509,7 +511,7 @@
     </script>
 
 
-    <!-- script que atualiza "tipo de gema" e "pedra" conforme href -->
+    <!-- script que atualiza "tipo de gema" e "pedra" conforme href - NAO TA FEITO -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const params = new URLSearchParams(window.location.search);
