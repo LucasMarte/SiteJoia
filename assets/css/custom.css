@@ -345,22 +345,21 @@ section.bg-white {
 
 /* buscaGemas.html -- start */
 
-.tipo-gema-group {
-    max-width: 100%;
-    gap: 0.5rem;
-}
 .tipo-gema-group .tipo-gema-btn {
     flex: 1 1 calc(33.33% - 0.5rem);
     text-align: center;
-    font-size: 0.85rem;
-    padding: 0.4rem 0.6rem;
-    border-radius: 50px !important;
+    font-size: 0.85rem; /* texto menor */
+    /* padding: 0.4rem 0.6rem;
+    border-radius: 50px !important; */
+    /* margin-right: 0.5rem; */
     white-space: nowrap;
     transition: all 0.2s ease-in-out;
-    min-width: 90px;
+}
+.tipo-gema-group .tipo-gema-btn:last-child {
+    margin-right: 0; /* remove margem do último botão */
 }
 .tipo-gema-group .tipo-gema-btn i {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* ícone menor */
     vertical-align: middle;
 }
 .btn-check:checked + .tipo-gema-btn,
