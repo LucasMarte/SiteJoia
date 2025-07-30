@@ -156,65 +156,121 @@
         </div>
     </div>
 
-    <!-- Start Map -->
-    <div id="mapid" style="width: 100%; height: 300px;"></div>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
-    <script>
-        var mymap = L.map('mapid').setView([-23.013104, -43.394365, 13], 13);
-
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-            maxZoom: 18,
-            attribution: 'Zay Telmplte | Template Design by <a href="https://templatemo.com/">Templatemo</a> | Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1
-        }).addTo(mymap);
-
-        L.marker([-23.013104, -43.394365, 13]).addTo(mymap)
-            .bindPopup("<b>Zay</b> eCommerce Template<br />Location.").openPopup();
-
-        mymap.scrollWheelZoom.disable();
-        mymap.touchZoom.disable();
-    </script>
-    <!-- Ena Map -->
-
-    <!-- Start Contact -->
-    <div class="container py-5">
-        <div class="row py-5">
-            <form class="col-md-9 m-auto" method="post" role="form">
-                <div class="row">
-                    <div class="form-group col-md-6 mb-3">
-                        <label for="inputname">Name</label>
-                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Name">
-                    </div>
-                    <div class="form-group col-md-6 mb-3">
-                        <label for="inputemail">Email</label>
-                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Email">
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="inputsubject">Subject</label>
-                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Subject">
-                </div>
-                <div class="mb-3">
-                    <label for="inputmessage">Message</label>
-                    <textarea class="form-control mt-1" id="message" name="message" placeholder="Message"
-                        rows="8"></textarea>
-                </div>
-                <div class="row">
-                    <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3">Let’s Talk</button>
-                    </div>
-                </div>
-            </form>
+    <!-- Seção Hero - Finalização de Compra -->
+    <section class="hero-finalizacao d-flex align-items-center text-center text-white"
+        style="background: url('images/hero-contato.jpg') center/cover no-repeat; height: 80vh; position: relative;">
+        <div class="overlay position-absolute top-0 start-0 w-100 h-100"
+            style="background-color: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+        <div class="container position-relative z-index-2">
+            <h1 class="display-5 fw-bold mb-4">Tudo pronto para finalizar sua compra?</h1>
+            <p class="lead mb-4">Entre em contato com nossa equipe e receba um atendimento exclusivo.</p>
+            <a href="https://wa.me/55XXXXXXXXXXX" class="btn btn-lg btn-light px-5 py-3 fw-semibold shadow-sm">
+                <i class="fab fa-whatsapp me-2"></i> Finalizar pelo WhatsApp
+            </a>
         </div>
-    </div>
-    <!-- End Contact -->
+    </section>
 
+
+    <!-- Seção 2 - Informações de Contato -->
+    <section class="bg-light py-5 text-center">
+        <div class="container">
+            <h2 class="mb-4 fw-bold">Prefere outro meio de contato?</h2>
+            <p class="mb-5 text-muted">Fale com a gente como preferir. Estamos prontos para te atender.</p>
+
+            <div class="row justify-content-center g-4">
+                <!-- Telefone -->
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body py-4">
+                            <i class="fas fa-phone fa-2x mb-3 text-primary"></i>
+                            <h5 class="card-title fw-semibold">Chamada Direta</h5>
+                            <p class="card-text mb-0">+55 (11) 99999-9999</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body py-4">
+                            <i class="fas fa-envelope fa-2x mb-3 text-primary"></i>
+                            <h5 class="card-title fw-semibold">Email</h5>
+                            <p class="card-text mb-0">atendimento@infni.com.br</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body py-4">
+                            <i class="fab fa-whatsapp fa-2x mb-3 text-success"></i>
+                            <h5 class="card-title fw-semibold">WhatsApp</h5>
+                            <p class="card-text mb-0">
+                                <a href="https://wa.me/55XXXXXXXXXXX" class="text-decoration-none">Clique para
+                                    conversar</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Horário de Atendimento -->
+            <div class="mt-5">
+                <i class="fas fa-clock fa-lg text-muted me-2"></i>
+                <span class="text-muted">Atendimento de segunda a sexta, das 10h às 18h</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4 - Formulário de Finalização -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4 text-center fw-bold">Finalize sua compra</h2>
+                    <p class="text-center text-muted mb-5">Nos envie seus dados e finalize sua compra com atendimento
+                        personalizado.</p>
+
+                    <form id="formFinalizacao" class="shadow-sm p-4 rounded bg-light">
+                        <!-- Nome -->
+                        <div class="mb-3">
+                            <label for="nome" class="form-label fw-semibold">Nome completo</label>
+                            <input type="text" class="form-control" id="nome" name="nome" required>
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div class="mb-3">
+                            <label for="whatsapp" class="form-label fw-semibold">Número de WhatsApp</label>
+                            <input type="tel" class="form-control" id="whatsapp" name="whatsapp"
+                                placeholder="(11) 91234-5678" required>
+                        </div>
+
+                        <!-- Email (opcional) -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">Email (opcional)</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+
+                        <!-- Produtos ou mensagem -->
+                        <div class="mb-4">
+                            <label for="mensagem" class="form-label fw-semibold">Produtos desejados ou mensagem</label>
+                            <textarea class="form-control" id="mensagem" name="mensagem" rows="4"
+                                placeholder="Ex: Colar de ametista + Anel dourado tamanho 16" required></textarea>
+                        </div>
+
+                        <!-- Botão de envio -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-dark btn-lg px-5">
+                                <i class="fab fa-whatsapp me-2"></i>Enviar e continuar no WhatsApp
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Start Footer -->
     <footer class="bg-white border-top pt-5">
