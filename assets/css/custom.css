@@ -378,30 +378,31 @@ section.bg-white {
 
 /* Contato.html -- start */
 
-.hero-finalizacao {
-    position: relative;
-    overflow: hidden;
-}
-.hero-finalizacao .overlay {
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-.hero-finalizacao .container {
-    z-index: 2;
-}
-.hero-finalizacao h1,
-.hero-finalizacao p {
-    color: #fff;
-}
-.hero-finalizacao .btn-light {
-    background-color: #ffffff;
-    color: #000;
-    border: none;
-    transition: all 0.3s ease;
+/* Ícones de contato minimalistas */
+.icones-contato .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.hero-finalizacao .btn-light:hover {
-    background-color: #e2e2e2;
+.icones-contato .icon-contato {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #000;
 }
+
+.icones-contato p,
+.icones-contato a {
+  font-size: 0.875rem; /* equivalente ao <small> */
+  color: #000;
+  margin: 0;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.icones-contato a:hover {
+  text-decoration: underline;
+}
+
 
 /* Contato.html -- Close */
