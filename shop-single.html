@@ -104,15 +104,20 @@
                             </div>
                         </div>
                     </div>
-                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal"
+                    <!-- <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal"
                         data-bs-target="#templatemo_search">
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
-                    </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    </a> -->
+
+                    <a href="#" class="position-relative me-3" data-bs-toggle="modal" data-bs-target="#modalCarrinho">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span
-                            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                        <span id="carrinho-badge"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-dark">
+                            0
+                        </span>
                     </a>
+
+
                     <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span
@@ -289,7 +294,7 @@
                                 ADICIONAR À SACOLA
                             </button>
 
-                            <a href="#" class="btn btn-outline-dark btn-lg">ENTRAR EM CONTATO</a>
+                            <a href="contact.html" class="btn btn-outline-dark btn-lg">ENTRAR EM CONTATO</a>
                         </div>
                     </form>
 
@@ -530,14 +535,14 @@
 
                     <!-- Subtotal + Cupom -->
                     <div class="d-flex flex-wrap justify-content-between align-items-center mt-4">
-                        <div class="d-flex flex-column flex-md-row gap-2">
+                        <!-- <div class="d-flex flex-column flex-md-row gap-2">
                             <label for="cupom" class="form-label mb-0 me-2 fw-semibold">Cupom de desconto:</label>
                             <div class="input-group">
                                 <input type="text" id="cupom" class="form-control form-control-sm"
                                     placeholder="Digite o cupom">
                                 <button class="btn btn-outline-secondary btn-sm">Usar cupom</button>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="fs-5 fw-bold text-success">Subtotal: <span id="carrinho-subtotal">R$ 0,00</span>
                         </div>
                     </div>
@@ -676,30 +681,112 @@
 
 
 
-
-    <!-- Start Script Carrinho-->
+    <!-- Start Script Carrinho -->
     <script>
+        function obterCarrinho() {
+            const carrinhoJSON = localStorage.getItem('carrinho');
+            return carrinhoJSON ? JSON.parse(carrinhoJSON) : [];
+        }
+
+        function salvarCarrinho(carrinho) {
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        }
+
         function adicionarAoCarrinho() {
             const nome = document.querySelector('.product-title').innerText;
             const precoTexto = document.querySelector('.product-price').innerText;
             const preco = parseFloat(precoTexto.replace(/[^\d,]/g, '').replace(',', '.'));
-            const subtotalEl = document.getElementById('carrinho-subtotal');
-            const listaEl = document.getElementById('carrinho-lista');
+            const imagem = document.querySelector('.img-fluid.w-100.border')?.getAttribute('src') || '';
+            const id = nome.toLowerCase().replace(/\s+/g, '-');
 
-            // Cria item do carrinho
-            const itemHTML = `
-      <tr>
-        <td>${nome}</td>
-        <td>R$ ${preco.toFixed(2).replace('.', ',')}</td>
-        <td>1</td>
-        <td><button class="btn btn-sm btn-link text-danger"><i class="fa fa-trash"></i></button></td>
-      </tr>
-    `;
+            let carrinho = obterCarrinho();
 
-            listaEl.innerHTML = itemHTML;
-            subtotalEl.innerText = `R$ ${preco.toFixed(2).replace('.', ',')}`;
+            const existente = carrinho.find(item => item.id === id);
+            if (existente) {
+                existente.qtd += 1;
+            } else {
+                carrinho.push({ id, nome, preco, qtd: 1, imagem });
+            }
+
+            salvarCarrinho(carrinho);
+            atualizarCarrinhoModal();
         }
+
+        function atualizarCarrinhoModal() {
+            const carrinho = obterCarrinho();
+            const listaEl = document.getElementById('carrinho-lista');
+            const subtotalEl = document.getElementById('carrinho-subtotal');
+
+            if (!listaEl || !subtotalEl) return;
+
+            listaEl.innerHTML = '';
+            let subtotal = 0;
+
+            carrinho.forEach(item => {
+                subtotal += item.preco * item.qtd;
+
+                listaEl.innerHTML += `
+        <tr data-id="${item.id}">
+          <td>
+            <img src="${item.imagem}" alt="${item.nome}" style="width: 64px; border-radius: 4px;">
+          </td>
+          <td>${item.nome}</td>
+          <td class="text-center">R$ ${item.preco.toFixed(2).replace('.', ',')}</td>
+          <td class="text-center">
+            <div class="d-flex align-items-center justify-content-center gap-2">
+              <button class="btn btn-sm btn-outline-secondary" onclick="alterarQtd('${item.id}', -1)">–</button>
+              <input type="text" class="form-control form-control-sm text-center" style="width: 50px;" value="${item.qtd}" disabled>
+              <button class="btn btn-sm btn-outline-secondary" onclick="alterarQtd('${item.id}', 1)">+</button>
+            </div>
+          </td>
+          <td class="text-center">
+            <button class="btn btn-sm text-danger" onclick="removerItem('${item.id}')">
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      `;
+            });
+
+            subtotalEl.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            atualizarCarrinhoBadge();
+        }
+
+        function atualizarCarrinhoBadge() {
+            const carrinho = obterCarrinho();
+            const badgeEl = document.getElementById('carrinho-badge');
+            const totalItens = carrinho.reduce((soma, item) => soma + item.qtd, 0);
+
+            if (badgeEl) {
+                badgeEl.innerText = totalItens;
+                badgeEl.style.display = totalItens > 0 ? 'inline-block' : 'none';
+            }
+        }
+
+        function alterarQtd(id, delta) {
+            let carrinho = obterCarrinho();
+            const item = carrinho.find(prod => prod.id === id);
+            if (!item) return;
+
+            item.qtd = Math.max(1, item.qtd + delta); // nunca menos que 1
+            salvarCarrinho(carrinho);
+            atualizarCarrinhoModal();
+        }
+
+        function removerItem(id) {
+            let carrinho = obterCarrinho();
+            carrinho = carrinho.filter(item => item.id !== id);
+            salvarCarrinho(carrinho);
+            atualizarCarrinhoModal();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            atualizarCarrinhoModal();
+            atualizarCarrinhoBadge();
+        });
+
     </script>
+
     <!-- End Script Carrinho-->
 
 
