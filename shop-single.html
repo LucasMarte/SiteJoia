@@ -504,44 +504,53 @@
 
     <!-- Start Carrinho Modal -->
     <div class="modal fade" id="modalCarrinho" tabindex="-1" aria-labelledby="modalCarrinhoLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content border-0 shadow-lg">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="modalCarrinhoLabel"><i class="fa fa-shopping-cart me-2"></i>Seu carrinho
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content carrinho-modal-content">
+                <div class="modal-body p-4">
+
+                    <h5 class="mb-4"><i class="fa fa-check-circle text-success me-2"></i>Produto adicionado com sucesso!
                     </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Lista de produtos -->
-                    <div class="table-responsive mb-4">
-                        <table class="table align-middle">
-                            <thead class="table-light">
+
+                    <div class="table-responsive shadow-sm border rounded">
+                        <table class="table align-middle m-0">
+                            <thead class="bg-light text-dark small">
                                 <tr>
+                                    <th style="width: 80px;">Imagem</th>
                                     <th>Produto</th>
-                                    <th>Preço</th>
-                                    <th>Qtd.</th>
-                                    <th></th>
+                                    <th class="text-center" style="width: 140px;">Preço</th>
+                                    <th class="text-center" style="width: 130px;">Quantidade</th>
+                                    <th class="text-center" style="width: 40px;"></th>
                                 </tr>
                             </thead>
                             <tbody id="carrinho-lista">
-                                <!-- Itens inseridos via JavaScript -->
+                                <!-- Conteúdo gerado por JavaScript -->
                             </tbody>
                         </table>
                     </div>
 
-                    <!-- Subtotal -->
-                    <div class="d-flex justify-content-between align-items-center">
-                        <strong class="h5">Subtotal:</strong>
-                        <strong class="h5 text-success" id="carrinho-subtotal">R$ 0,00</strong>
+                    <!-- Subtotal + Cupom -->
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mt-4">
+                        <div class="d-flex flex-column flex-md-row gap-2">
+                            <label for="cupom" class="form-label mb-0 me-2 fw-semibold">Cupom de desconto:</label>
+                            <div class="input-group">
+                                <input type="text" id="cupom" class="form-control form-control-sm"
+                                    placeholder="Digite o cupom">
+                                <button class="btn btn-outline-secondary btn-sm">Usar cupom</button>
+                            </div>
+                        </div>
+                        <div class="fs-5 fw-bold text-success">Subtotal: <span id="carrinho-subtotal">R$ 0,00</span>
+                        </div>
                     </div>
-                    
-                </div>
-                <div class="modal-footer border-0 justify-content-between">
-                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Continuar
-                        comprando</button>
-                    <a href="checkout.html" class="btn btn-dark">
-                        <i class="fa fa-shopping-bag me-2"></i> Finalizar compra
-                    </a>
+
+                    <!-- Botões -->
+                    <div class="d-flex justify-content-end mt-4 gap-3 flex-wrap">
+                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">
+                            <i class="fa fa-chevron-left me-1"></i> Continuar comprando
+                        </button>
+                        <a href="checkout.html" class="btn btn-dark">
+                            <i class="fa fa-shopping-cart me-2"></i>Finalizar compra
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
