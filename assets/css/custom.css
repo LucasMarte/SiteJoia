@@ -2,6 +2,7 @@
 Custom Css
 */
 
+/* index -- start */
 /* index Top Nav -- start */
 #templatemo_nav_top {
   background-color: #000000 !important;
@@ -143,7 +144,7 @@ Custom Css
 }
 
 /* Destaques -- close */
-
+/* index -- close */
 
 
 
@@ -241,6 +242,29 @@ section.bg-white {
   width: 100%;
 }
 
+.carrinho-modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  max-width: 850px;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carrinho-modal-content table img {
+  width: 64px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.carrinho-modal-content .table td,
+.carrinho-modal-content .table th {
+  vertical-align: middle;
+}
+
+.carrinho-modal-content .btn-outline-dark {
+  min-width: 180px;
+}
+
 
 /* Forçar altura mínima para o wrapper do carrossel */
 .carousel-wrapper {
@@ -253,9 +277,12 @@ section.bg-white {
   padding: 0 12px;
 }
 
-
-
 /* Shop-single Content -- close */
+
+
+
+
+
 
 
 
