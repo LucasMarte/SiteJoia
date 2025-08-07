@@ -144,6 +144,66 @@ Custom Css
 }
 
 /* Destaques -- close */
+
+
+
+
+
+/* Modal login -- start  */
+/* Fundo cinza claro ao abrir o modal */
+.modal-backdrop.show {
+  background-color: #f5f5f5;
+  opacity: 1;
+}
+
+/* Caixa central de login */
+.login-card {
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  max-width: 380px;
+  margin: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Logo centralizado */
+.login-logo {
+  max-width: 140px;
+}
+
+/* Input estilo Suarez */
+.login-input {
+  border-radius: 8px;
+  border: 1px solid #dedede;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+/* Botão preto */
+.login-btn {
+  background-color: #000;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.6rem;
+  border: none;
+}
+
+.login-btn:hover {
+  background-color: #222;
+}
+
+/* Links do rodapé */
+.login-link {
+  font-size: 0.85rem;
+  color: #000;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+/* Modal login -- close  */
 /* index -- close */
 
 
