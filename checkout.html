@@ -185,11 +185,11 @@
                 <form>
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="nome" class="form-label">Nome completo</label>
+                            <label for="nome" class="form-label">Nome completo*</label>
                             <input type="text" class="form-control" id="nome" placeholder="Seu nome completo">
                         </div>
                         <div class="col-md-6">
-                            <label for="email" class="form-label">E-mail</label>
+                            <label for="email" class="form-label">E-mail*</label>
                             <input type="email" class="form-control" id="email" placeholder="seuemail@exemplo.com">
                         </div>
                         <div class="col-md-6">
@@ -197,7 +197,7 @@
                             <input type="tel" class="form-control" id="telefone" placeholder="(11) 91234-5678">
                         </div>
                         <div class="col-md-6">
-                            <label for="cpf" class="form-label">CPF</label>
+                            <label for="cpf" class="form-label">CPF*</label>
                             <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
                         </div>
                     </div>
@@ -214,12 +214,16 @@
                 <h4 class="fw-bold mb-3 text-dark">Endereço de Entrega</h4>
                 <form>
                     <div class="row g-3">
+                        <div class="col-md-2">
+                            <label for="cep" class="form-label">CEP*</label>
+                            <input type="text" class="form-control" id="cep" placeholder="00000-000">
+                        </div>
                         <div class="col-md-8">
-                            <label for="rua" class="form-label">Rua</label>
+                            <label for="rua" class="form-label">Rua*</label>
                             <input type="text" class="form-control" id="rua" placeholder="Nome da rua">
                         </div>
                         <div class="col-md-4">
-                            <label for="numero" class="form-label">Número</label>
+                            <label for="numero" class="form-label">Número*</label>
                             <input type="text" class="form-control" id="numero" placeholder="Número">
                         </div>
                         <div class="col-md-6">
@@ -228,28 +232,48 @@
                                 placeholder="Apartamento, bloco, etc.">
                         </div>
                         <div class="col-md-6">
-                            <label for="bairro" class="form-label">Bairro</label>
+                            <label for="bairro" class="form-label">Bairro*</label>
                             <input type="text" class="form-control" id="bairro" placeholder="Bairro">
                         </div>
                         <div class="col-md-6">
-                            <label for="cidade" class="form-label">Cidade</label>
+                            <label for="cidade" class="form-label">Cidade*</label>
                             <input type="text" class="form-control" id="cidade" placeholder="Cidade">
                         </div>
                         <div class="col-md-4">
-                            <label for="estado" class="form-label">Estado</label>
+                            <label for="estado" class="form-label">Estado*</label>
                             <select class="form-select" id="estado">
                                 <option selected disabled>Selecione</option>
-                                <option>SP</option>
-                                <option>RJ</option>
+                                <option>AC</option>
+                                <option>AL</option>
+                                <option>AP</option>
+                                <option>AM</option>
+                                <option>BA</option>
+                                <option>CE</option>
+                                <option>DF</option>
+                                <option>ES</option>
+                                <option>GO</option>
+                                <option>MA</option>
+                                <option>MT</option>
+                                <option>MS</option>
                                 <option>MG</option>
+                                <option>PA</option>
+                                <option>PB</option>
+                                <option>PR</option>
+                                <option>PE</option>
+                                <option>PI</option>
+                                <option>RJ</option>
+                                <option>RN</option>
                                 <option>RS</option>
+                                <option>RO</option>
+                                <option>RR</option>
+                                <option>SC</option>
+                                <option>SP</option>
+                                <option>SE</option>
+                                <option>TO</option>
                                 <!-- Adicione outros estados aqui -->
                             </select>
                         </div>
-                        <div class="col-md-2">
-                            <label for="cep" class="form-label">CEP</label>
-                            <input type="text" class="form-control" id="cep" placeholder="00000-000">
-                        </div>
+
                     </div>
 
                     <div class="d-flex justify-content-between mt-4">
